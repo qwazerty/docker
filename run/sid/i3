@@ -7,4 +7,4 @@ lxc.cgroup.devices.allow = c 29:0 rwm \
 lxc.cgroup.devices.allow = c 13:33 rwm\
 \""
 #DOCKER_ID=$(docker run -d -privileged -v /dev:/dev -e HOME=/root -i -t xorg-sid timeout 30 startx -- :9 vt9)
-DOCKER_ID=$(docker run -d -privileged -v /dev:/dev -e HOME=/root -i -t xorg-sid bash)
+DOCKER_ID=$(docker run -d -privileged -v /dev:/dev -e HOME=/root -i -t i3-sid bash)
