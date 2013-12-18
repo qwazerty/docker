@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# FIXME: Do not mount /dev, but mknod instead
+LXC_CONF="\"\
+lxc.cgroup.devices.allow = c 226:0 rwm \
+lxc.cgroup.devices.allow = c 29:0 rwm \
+lxc.cgroup.devices.allow = c 13:33 rwm\
+\""
+DOCKER_ID=$(docker run -d -privileged -v /dev:/dev -e HOME=/root -i -t xorg-sid startx -- :9 vt9)
