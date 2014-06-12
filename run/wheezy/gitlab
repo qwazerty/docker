@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DOCKER_IMAGE="wheezy-gitlab"
+DOCKER_VAR="/var/log/docker/$DOCKER_IMAGE"
+
+DOCKER_ID=$(docker run -d -v $DOCKER_VAR:/var/log -it $DOCKER_IMAGE)

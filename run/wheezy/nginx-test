@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DOCKER_IMAGE="wheezy-nginx-test"
+DOCKER_PORT="9000"
+DOCKER_VAR="/var/log/docker/$DOCKER_IMAGE"
+mkdir -p $DOCKER_VAR
+mkdir -p $DOCKER_VAR/nginx
+DOCKER_ID=$(docker run -d -v $DOCKER_VAR:/var/log/ -p 127.0.0.1:$DOCKER_PORT:80 -it $DOCKER_IMAGE)
