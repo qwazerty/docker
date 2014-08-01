@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DOCKER_IMAGE="wheezy-base"
+DOCKER_VAR="/var/log/docker/$DOCKER_IMAGE"
+
+DOCKER_ID=$(docker run -d -e HOME=/root -v $DOCKER_VAR:/var/log -it $DOCKER_IMAGE /bin/zsh)

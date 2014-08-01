@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DOCKER_IMAGE="arch-openssh"
+DOCKER_VAR="/var/log/docker/$DOCKER_IMAGE"
+
+DOCKER_ID=$(docker run -d --privileged -v $DOCKER_VAR:/var/log -it $DOCKER_IMAGE)

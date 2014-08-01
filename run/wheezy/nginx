@@ -1,0 +1,3 @@
+#!/bin/bash
+
+DOCKER_ID=$(docker run -d -e HOME=/root -it wheezy-nginx /bin/zsh)

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DOCKER_IMAGE="arch-base"
+DOCKER_VAR="/var/log/docker/$DOCKER_IMAGE"
+
+DOCKER_ID=$(docker run -p 9022:22 -d -v $DOCKER_VAR:/var/log -it $DOCKER_IMAGE /usr/bin/zsh)
