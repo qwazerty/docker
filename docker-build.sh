@@ -1,5 +1,6 @@
 #!/bin/bash
 
+DOCKER=docker
 NO_CACHE=
 
 usage() {
@@ -12,7 +13,7 @@ usage() {
 
 build() {
     DOCKER_PATH=$(echo $1 | sed 's/.*build//' | cut -d/ -f2,3 | sed 's|/|-|')
-    docker build $NO_CACHE --rm -t $DOCKER_PATH $(dirname $1)
+    $DOCKER build $NO_CACHE --rm -t $DOCKER_PATH $(dirname $1)
 }
 
 # FIXME: Handle dependencies
